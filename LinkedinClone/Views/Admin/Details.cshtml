@@ -1,0 +1,32 @@
+﻿@model LinkedinClone.Models.Candidate
+
+<h1>Details</h1>
+
+<table class="table">
+    <tr>
+        <td><strong>Name:</strong></td>
+        <td>@Model.FirstName @Model.LastName</td>
+    </tr>
+    <tr>
+        <td><strong>Email:</strong></td>
+        <td>@Model.Email</td>
+    </tr>
+    <tr>
+        <td><strong>Phone Number:</strong></td>
+        <td>@Model.Phone</td>
+    </tr>
+    <tr>
+        <td><strong>Education Level:</strong></td>
+        <td>@Model.EducationLevel</td>
+    </tr>
+    <tr>
+        <td><strong>Years of Experience:</strong></td>
+        <td>@Model.YearsOfExperience</td>
+    </tr>
+    <tr>
+        <td><strong>Last Employer:</strong></td>
+        <td>@Model.LastEmployer</td>
+    </tr>
+</table>
+
+<a asp-action="Index">Back to List</a>

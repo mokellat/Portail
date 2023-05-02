@@ -1,0 +1,19 @@
+﻿@model LinkedinClone.Models.Candidate
+
+<h1>Confirm Deletion</h1>
+
+<p>Are you sure you want to delete the following candidate?</p>
+
+<ul>
+    <li><strong>Name:</strong> @Model.FirstName @Model.LastName</li>
+    <li><strong>Email:</strong> @Model.Email</li>
+    <li><strong>Phone Number:</strong> @Model.Phone</li>
+    <li><strong>Education Level:</strong> @Model.EducationLevel</li>
+    <li><strong>Years of Experience:</strong> @Model.YearsOfExperience</li>
+</ul>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" value="@Model.Id" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

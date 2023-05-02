@@ -1,0 +1,70 @@
+﻿@model PagedList.IPagedList<LinkedinClone.Models.Candidate>
+
+<h1>Candidate List</h1>
+
+<form asp-action="Index" method="get">
+    <p>
+        <input type="text" name="searchString" placeholder="Search...">
+        <button type="submit">Search</button>
+    </p>
+</form>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                First Name
+            </th>
+            <th>
+                Last Name
+            </th>
+            <th>
+                Email
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var candidate in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => candidate.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => candidate.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => candidate.Email)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@candidate.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@candidate.Id">Delete</a> |
+                    <a href="@Url.Action("ViewCV", "Admin", new { id = candidate.Id })" target="_blank" class="btn btn-info">View CV</a>
+                    @*<a asp-action="DownloadCV" asp-route-id="@candidate.Id">View Resume</a>*@
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+    @if (Model.HasPreviousPage)
+    {
+        <a asp-action="Index" asp-route-page="@(Model.PageNumber - 1)" asp-route-searchString="@ViewBag.CurrentFilter">&lt; Previous</a>
+    }
+    else
+    {
+        <span>&lt; Previous</span>
+    }
+    @if (Model.HasNextPage)
+    {
+        <a asp-action="Index" asp-route-page="@(Model.PageNumber + 1)" asp-route-searchString="@ViewBag.CurrentFilter">Next &gt;</a>
+    }
+    else
+    {
+        <span>Next &gt;</span>
+    }
+</div>

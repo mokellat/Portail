@@ -1,0 +1,25 @@
+﻿@model LinkedinClone.Models.Candidate
+
+<h1>Confirm Information</h1>
+
+<p>Please review the information you've entered:</p>
+
+<ul>
+    <li><strong>Name:</strong> @Model.FirstName @Model.LastName</li>
+    <li><strong>Email:</strong> @Model.Email</li>
+    <li><strong>Phone Number:</strong> @Model.Phone</li>
+    <li><strong>Education Level:</strong> @Model.EducationLevel</li>
+    <li><strong>Years of Experience:</strong> @Model.YearsOfExperience</li>
+</ul>
+
+<form asp-action="Step3" method="post">
+    <input type="hidden" asp-for="Id" value="@Model.Id" />
+    <input type="hidden" asp-for="FirstName" value="@Model.FirstName" />
+    <input type="hidden" asp-for="LastName" value="@Model.LastName" />
+    <input type="hidden" asp-for="Email" value="@Model.Email" />
+    <input type="hidden" asp-for="Phone" value="@Model.Phone" />
+    <input type="hidden" asp-for="EducationLevel" value="@Model.EducationLevel" />
+    <input type="hidden" asp-for="YearsOfExperience" value="@Model.YearsOfExperience" />
+    <input type="hidden" asp-for="LastEmployer" value="@Model.LastEmployer" />
+    <button type="submit" class="btn btn-primary">Submit Application</button>
+</form>

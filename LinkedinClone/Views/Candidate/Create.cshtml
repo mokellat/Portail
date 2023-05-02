@@ -1,0 +1,44 @@
+﻿@model LinkedinClone.Models.Candidate
+
+<h1>Create</h1>
+
+<form asp-action="Step1" method="post">
+    <div class="form-group">
+        <label asp-for="FirstName" class="control-label"></label>
+        <input asp-for="FirstName" class="form-control" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LastName" class="control-label"></label>
+        <input asp-for="LastName" class="form-control" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email" class="control-label"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Phone" class="control-label"></label>
+        <input asp-for="Phone" class="form-control" />
+        <span asp-validation-for="Phone" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="EducationLevel" class="control-label"></label>
+        <input asp-for="EducationLevel" class="form-control" />
+        <span asp-validation-for="EducationLevel" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="YearsOfExperience" class="control-label"></label>
+        <input asp-for="YearsOfExperience" class="form-control" />
+        <span asp-validation-for="YearsOfExperience" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LastEmployer" class="control-label"></label>
+        <input asp-for="LastEmployer" class="form-control" />
+        <span asp-validation-for="LastEmployer" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Next" class="btn btn-primary" />
+    </div>
+</form>
